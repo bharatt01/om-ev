@@ -4,7 +4,7 @@ import workshopImg from "../assets/about-workshop.jpg";
 
 export default function About() {
   return (
-    <section id="about" className="relative w-full bg-white">
+    <section id="about" className="relative w-full bg-white overflow-hidden">
 
       {/* Top green line */}
       <motion.div
@@ -15,7 +15,7 @@ export default function About() {
         className="h-[3px] bg-[#81C784] origin-left"
       />
 
-      {/* HERO IMAGE — FULL WIDTH, EDGE TO EDGE */}
+      {/* HERO IMAGE — FULL WIDTH */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -39,11 +39,10 @@ export default function About() {
         </div>
       </motion.div>
 
-      {/* STORY — OFFSET LAYOUT */}
+      {/* STORY */}
       <div className="max-w-[1280px] mx-auto px-6 lg:px-12 py-20 lg:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-
-          {/* Left: Label + headline */}
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +61,6 @@ export default function About() {
             </h3>
           </motion.div>
 
-          {/* Right: Text */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -86,44 +84,45 @@ export default function About() {
         </div>
       </div>
 
-      {/* IMAGE BREAK — FULL WIDTH, ASYMMETRIC */}
-      <div className="relative">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9 }}
-          className="w-full lg:w-[85%] h-[300px] lg:h-[500px] overflow-hidden"
-        >
-          <img
-            src={workshopImg}
-            alt="Our workshop"
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
-
-        {/* Overlapping text block */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:w-[400px] bg-black p-8 lg:p-12 mt-6 lg:mt-0"
-        >
-          <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#81C784] mb-3">
-            The Workshop
-          </p>
-          <p className="text-white text-[15px] leading-[1.7]">
-            We work out of a converted warehouse in the city center. We test prototypes 
-            on the same streets our customers ride. We answer emails ourselves.
-          </p>
-        </motion.div>
+      {/* IMAGE + OVERLAP — FIXED */}
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
+        <div className="relative">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9 }}
+            className="w-full lg:w-[75%] h-[300px] lg:h-[480px] overflow-hidden"
+          >
+            <img
+              src={workshopImg}
+              alt="Our workshop"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative lg:absolute lg:right-0 lg:bottom-0 lg:w-[380px] bg-black p-8 lg:p-10 mt-4 lg:mt-0"
+          >
+            <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#81C784] mb-3">
+              The Workshop
+            </p>
+            <p className="text-white text-[15px] leading-[1.7]">
+              We work out of a converted warehouse in the city center. We test prototypes 
+              on the same streets our customers ride. We answer emails ourselves.
+            </p>
+          </motion.div>
+        </div>
       </div>
 
-      {/* VALUES — STRIPPED BACK */}
+      {/* VALUES */}
       <div className="max-w-[1280px] mx-auto px-6 lg:px-12 py-20 lg:py-28">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
-
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -165,7 +164,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* FACTS — BLACK STRIP */}
+      {/* FACTS */}
       <div className="bg-black">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-12 py-16 lg:py-20">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
