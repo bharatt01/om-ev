@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
-import productHero from "../assets/product-hero.jpg";
-import cardAero from "../assets/card-aero.jpg";
-import cardSwift from "../assets/card-swift.jpg";
-import cardUrban from "../assets/card-urban.jpg";
+import productHero from "../assets/product-hero.avif";
+import cardAero from "../assets/scooter.avif";
+import cardSwift from "../assets/scooter2.avif";
+import cardUrban from "../assets/bike.avif";
 
 export function Products() {
   return (
     <section id="products" className="relative bg-white">
 
-      {/* HEADER */}
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-12 pt-28 pb-16">
+      {/* HEADER — reduced padding on mobile: pt-14 (was pt-28), pb-8 (was pb-16) */}
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-12 pt-14 md:pt-28 pb-8 md:pb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -29,20 +29,20 @@ export function Products() {
         <div className="h-px bg-black/8" />
       </div>
 
-      {/* PRODUCT 1 — VOLT PRIME: FULL WIDTH IMAGE, TEXT BELOW */}
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-12 pt-16 pb-20">
+      {/* PRODUCT 1 — reduced top padding on mobile: pt-8 (was pt-16) */}
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-12 pt-8 md:pt-16 pb-16 md:pb-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9 }}
         >
-          {/* Full width image */}
+          {/* Full width image — slightly shorter on mobile */}
           <div className="relative bg-[#f5f5f5] overflow-hidden">
             <img
               src={productHero}
               alt="Volt Prime"
-              className="w-full h-[50vh] min-h-[320px] max-h-[600px] object-cover"
+              className="w-full h-[35vh] md:h-[50vh] min-h-[260px] md:min-h-[320px] max-h-[600px] object-cover"
             />
             <div className="absolute top-5 left-5 bg-black px-3 py-1.5">
               <span className="text-white text-[9px] uppercase tracking-[0.25em] font-bold">
@@ -51,8 +51,8 @@ export function Products() {
             </div>
           </div>
 
-          {/* Text below image */}
-          <div className="mt-8 lg:mt-10 max-w-2xl">
+          {/* Text below image — reduced margin on mobile: mt-6 (was mt-8) */}
+          <div className="mt-6 md:mt-8 lg:mt-10 max-w-2xl">
             <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#81C784] mb-2">
               The Flagship
             </p>
@@ -93,8 +93,8 @@ export function Products() {
       </div>
 
       {/* PRODUCTS 2,3,4 — THREE COLUMN GRID */}
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-12 py-16 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-12 py-12 md:py-16 lg:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
 
           {/* AERO X1 */}
           <motion.div
@@ -107,7 +107,7 @@ export function Products() {
               <img
                 src={cardAero}
                 alt="Aero X1"
-                className="w-full h-[280px] lg:h-[340px] object-cover"
+                className="w-full h-[240px] md:h-[280px] lg:h-[340px] object-cover"
               />
             </div>
             <p className="text-[9px] uppercase tracking-[0.25em] font-bold text-[#81C784] mb-1.5">
@@ -142,7 +142,7 @@ export function Products() {
               <img
                 src={cardSwift}
                 alt="Swift Fold"
-                className="w-full h-[280px] lg:h-[340px] object-cover"
+                className="w-full h-[240px] md:h-[280px] lg:h-[340px] object-cover"
               />
             </div>
             <p className="text-[9px] uppercase tracking-[0.25em] font-bold text-[#81C784] mb-1.5">
@@ -177,7 +177,7 @@ export function Products() {
               <img
                 src={cardUrban}
                 alt="Urban Drift"
-                className="w-full h-[280px] lg:h-[340px] object-cover"
+                className="w-full h-[240px] md:h-[280px] lg:h-[340px] object-cover"
               />
             </div>
             <p className="text-[9px] uppercase tracking-[0.25em] font-bold text-[#81C784] mb-1.5">
@@ -206,8 +206,8 @@ export function Products() {
 
       {/* BOTTOM STRIP */}
       <div className="bg-black">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-12 py-14 flex flex-col lg:flex-row items-center justify-between gap-6">
-          <p className="text-white text-lg font-black tracking-tight">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-12 py-10 md:py-14 flex flex-col lg:flex-row items-center justify-between gap-6">
+          <p className="text-white text-lg font-black tracking-tight text-center lg:text-left">
             Not sure which one? <span className="text-[#81C784]">Test them all.</span>
           </p>
           <a
